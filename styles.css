@@ -179,6 +179,15 @@ a { color: inherit; text-decoration: none; }
   display: block;
 }
 
+/* Zick-zack effect — alternating vertical offset */
+.project-col .project-card:nth-child(odd) {
+  transform: translateY(30px);
+}
+
+.project-col .project-card:nth-child(even) {
+  transform: translateY(-20px);
+}
+
 /* The two "Code" projects read as quick notes, not showpieces — small and
    set off to one side, so the big design shots keep all the visual weight. */
 .project-card--small {
@@ -227,6 +236,12 @@ a { color: inherit; text-decoration: none; }
   .project-col { gap: 56px; }
 
   .project-card--small { width: 70%; }
+
+  /* Remove zick-zack on mobile */
+  .project-col .project-card:nth-child(odd),
+  .project-col .project-card:nth-child(even) {
+    transform: translateY(0);
+  }
 }
 
 /* ---------- Footer ---------- */
